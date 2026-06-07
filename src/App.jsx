@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Features from './components/Features'
+import HowItWorks from './components/HowItWorks'
 import FilterBadges   from "./components/FilterBadges";
 import PropertyGrid   from "./components/PropertyGrid";
 import PropertyModal  from "./components/Propertymodel";
@@ -106,6 +108,12 @@ const showToast = (message) => {
             onCardClick={setSelectedProperty}
           />
         </main>
+      )}
+       {!hasSearched && (
+        <>
+          <Features />
+          <HowItWorks />
+        </>
       )}
  
       {/* Always visible */}
