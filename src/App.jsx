@@ -26,10 +26,7 @@ function App() {
   const resultsRef = useRef(null);
 
 
-  useEffect(() => {
-    const sharedQuery = decodeQueryFromUrl();
-    if (sharedQuery) handleSearch(sharedQuery);
-  }, [handleSearch]);
+  
 
 
   // main search function
