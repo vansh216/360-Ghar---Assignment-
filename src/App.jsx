@@ -1,15 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import FilterBadges   from "./components/FilterBadges";
 import PropertyGrid   from "./components/PropertyGrid";
-import PropertyModal  from "./components/PropertyModal";
+import PropertyModal  from "./components/Propertymodel";
 import Footer from './components/Footer'
 
 
 import { parseQuery }         from "./utils/openrouter";
-import { filterProperties }   from "./utils/filterProperties";
+import { filterProperties }   from "./utils/filterProerties";
 import { encodeQueryToUrl, decodeQueryFromUrl, copyShareableUrl } from "./utils/shareUrl";
 
 import properties from './data/properties';
