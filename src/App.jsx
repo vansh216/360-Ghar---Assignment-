@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect ,useRef } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -23,12 +23,13 @@ function App() {
   const [hasSearched,      setHasSearched]      = useState(false);
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [toast,            setToast]            = useState("");
+  const resultsRef = useRef(null);
 
 
   useEffect(() => {
     const sharedQuery = decodeQueryFromUrl();
     if (sharedQuery) handleSearch(sharedQuery);
-  }, []);
+  }, [handleSearch]);
 
 
   // main search function
@@ -52,6 +53,10 @@ function App() {
       //  Score and rank properties against parsed filters
       const matched = filterProperties(properties, parsedFilters);
       setResults(matched);
+
+      setTimeout(() => {
+      resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+         }, 100);
     } catch (err) {
       console.error("Search failed:", err);
       showToast("Something went wrong. Please try again.");
@@ -80,7 +85,7 @@ const showToast = (message) => {
 
 
      {hasSearched && (
-        <main className="max-w-6xl mx-auto px-5 pb-20">
+        <main ref={resultsRef} className="max-w-6xl mx-auto px-5 pb-20">
  
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mt-2">
             
@@ -109,12 +114,12 @@ const showToast = (message) => {
           />
         </main>
       )}
-       {!hasSearched && (
+       
         <>
           <Features />
           <HowItWorks />
         </>
-      )}
+      
  
       {/* Always visible */}
       <Footer />
