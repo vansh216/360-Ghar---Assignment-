@@ -12,6 +12,7 @@ import { parseQuery }         from "./utils/openrouter";
 import { filterProperties }   from "./utils/filterProperties";
 import { encodeQueryToUrl, decodeQueryFromUrl, copyShareableUrl } from "./utils/shareUrl";
 
+import properties from './data/properties';
 function App() {
   const [query,            setQuery]            = useState("");
   const [filters,          setFilters]          = useState(null);
