@@ -7,6 +7,7 @@ const properties = [
   {
     id: 1,
     bhk: "2BHK",
+    img:"property1.png",
     area: 1100,
     price: 7500000,
     priceLabel: "75 Lakhs",
@@ -23,6 +24,7 @@ const properties = [
   {
     id: 2,
     bhk: "3BHK",
+    img:"property2.png",
     area: 1600,
     price: 12000000,
     priceLabel: "1.2 Cr",
@@ -39,6 +41,7 @@ const properties = [
   {
     id: 3,
     bhk: "2BHK",
+    img:"property3.png",
     area: 950,
     price: 6200000,
     priceLabel: "62 Lakhs",
@@ -55,6 +58,7 @@ const properties = [
   {
     id: 4,
     bhk: "1BHK",
+    img:"property4.png",
     area: 620,
     price: 3800000,
     priceLabel: "38 Lakhs",
@@ -71,6 +75,7 @@ const properties = [
   {
     id: 5,
     bhk: "3BHK",
+    img:"property5.png",
     area: 1800,
     price: 9500000,
     priceLabel: "95 Lakhs",
@@ -87,6 +92,7 @@ const properties = [
   {
     id: 6,
     bhk: "2BHK",
+    img:"property6.png",
     area: 1050,
     price: 7800000,
     priceLabel: "78 Lakhs",
@@ -103,6 +109,7 @@ const properties = [
   {
     id: 7,
     bhk: "4BHK",
+    img:"property7.png",
     area: 2400,
     price: 18000000,
     priceLabel: "1.8 Cr",
@@ -119,6 +126,7 @@ const properties = [
   {
     id: 8,
     bhk: "2BHK",
+    img:"property8.png",
     area: 1000,
     price: 8200000,
     priceLabel: "82 Lakhs",
@@ -135,6 +143,7 @@ const properties = [
   {
     id: 9,
     bhk: "3BHK",
+    img:"property9.png",
     area: 1500,
     price: 11500000,
     priceLabel: "1.15 Cr",
@@ -151,6 +160,7 @@ const properties = [
   {
     id: 10,
     bhk: "2BHK",
+    img:"property10.png",
     area: 880,
     price: 5500000,
     priceLabel: "55 Lakhs",
