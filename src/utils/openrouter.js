@@ -1,6 +1,6 @@
 const API_URL   = "https://openrouter.ai/api/v1/chat/completions";
 const API_KEY   = import.meta.env.VITE_OPENROUTER_API_KEY;
-const MODEL     = "google/gemma-3-27b-it:free";
+const MODEL     = "openai/gpt-oss-20b:free";
 const FALLBACK  = "mistralai/mistral-7b-instruct:free";
 
 //  call the llm
@@ -39,8 +39,10 @@ export const parseQuery = async (query) => {
     {
       role: "system",
       content: `You are a real estate filter parser for Indian properties in Gurgaon, NCR.
-Extract search filters from the user query and return ONLY a valid JSON object.
-No explanation. No markdown. No backticks. No extra text before or after the JSON.
+Your ONLY job is to output a raw JSON object. Nothing else.
+Do NOT write any explanation, heading, markdown, asterisks, backticks, or text of any kind.
+Do NOT start with words like "Parsed", "Here", "Output" or any label.
+Your entire response must start with { and end with }.
 
 Schema (use null for any field not mentioned):
 {
@@ -77,7 +79,12 @@ Output: {"bhk":"3BHK","maxBudget":10000000,"minBudget":null,"location":"Sector 6
   try {
     const raw  = await callLLM(messages, 300);
     // Strip any accidental markdown fences just in case
-    const clean = raw.replace(/```json|```/gi, "").trim();
+    let clean = raw.replace(/```json|```/gi, "").trim();
+
+    const jsonMatch = clean.match(/\{[\s\S]*\}/);
+if (!jsonMatch) throw new Error("No JSON object found in response");
+clean = jsonMatch[0];
+
     return JSON.parse(clean);
   } catch (err) {
     console.error("parseQuery failed:", err);
