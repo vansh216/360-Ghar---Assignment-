@@ -1,8 +1,3 @@
-const PROPERTY_EMOJIS = {
-  "Apartment":        "🏢",
-  "Builder Floor":    "🏡",
-  "Independent Villa":"🏘️",
-};
 
 const PropertyCard = ({ property, onClick, isTopMatch }) => {
   const { bhk, area, price, priceLabel, location, type, floor, facing, furnished, amenities, reasons, score } = property;
@@ -16,9 +11,20 @@ const PropertyCard = ({ property, onClick, isTopMatch }) => {
     >
 
       {/* Thumbnail placeholder with emoji */}
-      <div className="w-full h-40 bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center text-5xl select-none">
-        {PROPERTY_EMOJIS[type] || "🏠"}
-      </div>
+      {property.img ? (
+  <div className="relative w-full h-44 overflow-hidden">
+    <img
+      src={property.img}
+      alt={`${bhk} in ${location}`}
+      className="w-full h-44 object-cover"
+    />
+    <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-black/50 backdrop-blur-sm border border-white/20 rounded-full px-2.5 py-1">
+      <span className="text-white text-[11px] font-semibold">360°</span>
+    </div>
+  </div>
+) : (
+  <ThumbnailPlaceholder type={type} bhk={bhk} location={location} />
+)}
 
       {/* Best Match badge */}
       {isTopMatch && (

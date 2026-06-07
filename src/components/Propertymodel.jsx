@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAISummary } from "../utils/openrouter";
 
-const PROPERTY_EMOJIS = {
-  "Apartment":         "🏢",
-  "Builder Floor":     "🏡",
-  "Independent Villa": "🏘️",
-};
+
 
 // Skeleton shimmer for AI summary loading
 const SummarySkeleton = () => (
@@ -55,9 +51,20 @@ const PropertyModal = ({ property, query, onClose }) => {
       <div className="relative bg-white rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl">
 
         
-        <div className="w-full h-48 bg-linear-to-br from-green-50 to-emerald-100 flex items-center justify-center text-7xl select-none shrink-0">
-          {PROPERTY_EMOJIS[type] || "🏠"}
-        </div>
+       {property.img ? (
+  <div className="relative w-full h-44 overflow-hidden">
+    <img
+      src={property.img}
+      alt={`${bhk} in ${location}`}
+      className="w-full h-44 object-cover"
+    />
+    <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-black/50 backdrop-blur-sm border border-white/20 rounded-full px-2.5 py-1">
+      <span className="text-white text-[11px] font-semibold">360°</span>
+    </div>
+  </div>
+) : (
+  <ThumbnailPlaceholder type={type} bhk={bhk} location={location} />
+)}
 
         
         <button
