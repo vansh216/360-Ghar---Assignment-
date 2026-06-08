@@ -78,11 +78,11 @@ const showToast = (message) => {
   return (
     <div className="min-h-screen bg-[#FAFAF7]">
     <Navbar/>
-    <Hero  onSearch={handleSearch} loading={loading} />
+    <Hero id="ai-search"  onSearch={handleSearch} loading={loading} />
 
 
      {hasSearched && (
-        <main ref={resultsRef} className="max-w-6xl mx-auto px-5 pb-20">
+        <main  ref={resultsRef} className="max-w-6xl mx-auto px-5 pb-20">
  
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mt-2">
             
@@ -113,8 +113,8 @@ const showToast = (message) => {
       )}
        
         <>
-          <Features />
-          <HowItWorks />
+         <div id="features"><Features /></div>
+    <div id="how-it-works"><HowItWorks /></div>
         </>
       
  
