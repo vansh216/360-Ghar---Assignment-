@@ -4,8 +4,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import HowItWorks from './components/HowItWorks'
-import FilterBadges   from "./components/FilterBadges";
-import PropertyGrid   from "./components/PropertyGrid";
+import FilterBadges   from "./components/Filterbadges";
+import PropertyGrid   from "./components/Propertygrid";
 import PropertyModal  from "./components/Propertymodel";
 import Footer from './components/Footer'
 
