@@ -2,6 +2,13 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("");
+  const handleNav = (e, id) => {
+  e.preventDefault();
+  setActive(id);
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+};
 
   return (
     <nav className="sticky top-0 z-50 bg-cream/85 backdrop-blur-md border-b border-gray-200">
@@ -19,15 +26,21 @@ const Navbar = () => {
 
      {/* for the Desktop */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Properties</a>
-          <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">360° Tours</a>
-          <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">AI Search</a>
-          <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">About</a>
+         
+          <a href="#features" className={`text-sm font-medium transition-colors ${
+  active === "features" ? "text-green-600 font-semibold" : "text-gray-500 hover:text-gray-900"
+}`}>About</a>
+          <a href="#ai-search" className={`text-sm font-medium transition-colors ${
+  active === "ai-search" ? "text-green-600 font-semibold" : "text-gray-500 hover:text-gray-900"
+}`}>AI Search</a>
+          <a href="#how-it-works" className={`text-sm font-medium transition-colors ${
+  active === "how-it-works" ? "text-green-600 font-semibold" : "text-gray-500 hover:text-gray-900"
+}`}>how work</a>
         </div>
 
 
-        <button className="hidden md:block bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2 rounded-xl transition-colors">
-          List Property
+        <button className="hidden cursor-pointer md:block bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2 rounded-xl transition-colors">
+          <a href="ai-search">Search Property</a>
         </button>
 
 
@@ -53,12 +66,17 @@ const Navbar = () => {
        {/* dropdown for mobile */}
       {menuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-5 py-4 flex flex-col gap-4">
-          <a href="#" className="text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">Properties</a>
-          <a href="#" className="text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">360° Tours</a>
-          <a href="#" className="text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">AI Search</a>
-          <a href="#" className="text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">About</a>
-          <button className="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors w-full">
-            List Property
+          <a href="#features" className={`text-sm font-medium transition-colors ${
+  active === "features" ? "text-green-600 font-semibold" : "text-gray-500 hover:text-gray-900"
+}`}>About</a>
+          <a href="#ai-search" className={`text-sm font-medium transition-colors ${
+  active === "ai-search" ? "text-green-600 font-semibold" : "text-gray-500 hover:text-gray-900"
+}`}>AI Search</a>
+          <a href="#how-it-works" className={`text-sm font-medium transition-colors ${
+  active === "how-it-works" ? "text-green-600 font-semibold" : "text-gray-500 hover:text-gray-900"
+}`}>how work</a>
+          <button  className=" cursor-pointer bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors w-full">
+            <a href="ai-search">Search Property</a>
           </button>
         </div>
       )}
