@@ -1,4 +1,4 @@
-import SearchBar from "./SearchBar";
+import SearchBar from "./Searchbar";
 
 const STATS = [
   { num: "500", suffix: "+", label: "Verified properties" },

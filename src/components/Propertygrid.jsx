@@ -1,4 +1,4 @@
-import PropertyCard from "./PropertyCard";
+import PropertyCard from "./Propertycard";
 
 // Skeleton card shown while AI is parsing the query
 const SkeletonCard = () => (
