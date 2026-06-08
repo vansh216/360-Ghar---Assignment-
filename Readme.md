@@ -314,9 +314,9 @@ fully furnished 1BHK near metro under 45 lakhs
 
 ## 👨‍💻 Author
 
-**vANSH KUMAR PATEL**  
+**VANSH KUMAR PATEL**  
 Software Developer Intern Applicant  
-[vanshkumarp5@gmail.com] | [github.com/vansh216] | [linkedin.com/in/vansh-kumar-patel-bb7752313]
+[vanshkumarp5@gmail.com] | [https://github.com/vansh216] | [https://linkedin.com/in/vansh-kumar-patel-bb7752313]
 
 ---
 
