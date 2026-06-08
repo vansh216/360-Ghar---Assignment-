@@ -27,6 +27,10 @@ function App() {
 
 
   
+  useEffect(() => {
+  const sharedQuery = decodeQueryFromUrl();
+  if (sharedQuery) handleSearch(sharedQuery);
+}, []);
 
 
   // main search function
