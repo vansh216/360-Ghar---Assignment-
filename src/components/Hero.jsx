@@ -16,7 +16,7 @@ const Hero = ({ onSearch, loading }) => {
   return (
     <>
       {/* ── Hero Section ── */}
-      <section className="relative min-h-[calc(100vh-65px)] flex flex-col items-center justify-center px-5 py-16 overflow-hidden text-center bg-[#FAFAF7]">
+      <section id="ai-search"  className="relative min-h-[calc(100vh-65px)] flex flex-col items-center justify-center px-5 py-16 overflow-hidden text-center bg-[#FAFAF7]">
 
         {/* Background grid */}
         <div
