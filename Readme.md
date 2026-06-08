@@ -17,8 +17,8 @@ The app parses this into structured filters, matches them against mock property 
 
 ## 🚀 Live Demo
 
-🎥 **Loom Walkthrough:** [Insert Loom Link Here]  
-🔗 **Deployed App:** [Insert Vercel/Netlify Link Here]
+🎥 **Loom Walkthrough:** https://www.loom.com/share/275c24f33e89469a84641680b2d93fb3  
+🔗 **Deployed App:** https://360-ghar-assignment.vercel.app/
 
 ---
 
